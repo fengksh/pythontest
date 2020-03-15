@@ -33,3 +33,12 @@ for each_list in file:
         print(line_spoken,end="")
     except:
         pass
+
+for each_list in file:
+        if not each_list.find(':') == -1:
+            (role,line_spoken) = each_list.split(":",1)
+            print(role,end="")
+            print(" said: ",end="")
+            print(line_spoken,end="")
+        else:
+            pass
