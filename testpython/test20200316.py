@@ -39,11 +39,11 @@ out = open(r'E:/work/python/testpython/chapter3/sketch1.txt',"w")
 print("HHHHHHHHHHHHHHHHHHHHHHHHHHsssssss",file = out)
 out.close()
 out1 = open(r'E:/work/python/testpython/chapter3/sketch1.txt')
-print('11111111111111')
-print(out1.readlines())
-print('2222222222222222')
+#print('11111111111111')
+#print(out1.readlines())
+#print('2222222222222222')
 out1.close()
-'''
+
 man = []
 other = []
 try:
@@ -61,18 +61,16 @@ try:
 except IOError:
     print('data is missng')
 
+
 try:
-    man_data = open('E:/work/python/testpython/chapter3/man_data.txt','r+')
-    other_data = open('E:/work/python/testpython/chapter3/other_data.txt','r+')
-    print(man,file=man_data)
-    print(other,file=other_data)
+    with open('E:/work/python/testpython/chapter3/missing.txt','w') as man_file,open('E:/work/python/testpython/chapter3/other_data.txt','w') as other_file:
+        print(man,file = man_file)
+        print(other,file=other_file)
+except IOError as err:
+    print("File Error:" + str(err))
 
-except IOError:
-    print("man_data or other_data is missing")
-finally:
-    man_data.close()
-    other_data.close()
-
+print("1111111111111")
+'''
 try:
     data = open('E:/work/python/testpython/chapter3/missing.txt')
     print(data.readlines())
@@ -90,4 +88,3 @@ except IOError as err:
     print("File Error: "+str(err))
 
 
-with open('E:/work/python/testpython/chapter3/missing.txt','w'v)
