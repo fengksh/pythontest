@@ -88,3 +88,6 @@ try:
         print('it is a file',file = data)
 except IOError as err:
     print("File Error: "+str(err))
+
+
+with open('E:/work/python/testpython/chapter3/missing.txt','w'v)
