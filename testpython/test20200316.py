@@ -43,6 +43,7 @@ print('11111111111111')
 print(out1.readlines())
 print('2222222222222222')
 out1.close()
+'''
 man = []
 other = []
 try:
@@ -71,3 +72,19 @@ except IOError:
 finally:
     man_data.close()
     other_data.close()
+
+try:
+    data = open('E:/work/python/testpython/chapter3/missing.txt')
+    print(data.readlines())
+except IOError as err:
+    print('File Error: '+ str(err))
+finally:
+    if 'data' in locals():
+        data.close()
+'''
+
+try:
+    with open('E:/work/python/testpython/chapter3/missing.txt','w') as data:
+        print('it is a file',file = data)
+except IOError as err:
+    print("File Error: "+str(err))
