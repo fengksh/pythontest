@@ -61,17 +61,22 @@ def sanitize(time):
 def openfile(fn = sys.stdout):
     try:
         with open(fn) as out:
+            newname = dict()
             names = out.readline().strip().split(',')
-            return sorted(set([sanitize(namses_test) for namses_test in names]))
+            (newname['name'],newname['birthday']) = names.pop(0),names.pop(0)
+            newname['time'] = sorted(set([sanitize(namses_test) for namses_test in names]))
+            return newname
     except IOError as ioerr:
         print("FIle Eror: "+str(ioerr))
         return (None)
 
 
-print(openfile(r'E:/work/python/testpython/chapter3/20200917/james.txt')[0:3])
-print(openfile(r'E:/work/python/testpython/chapter3/20200917/julie.txt')[0:3])
-print(openfile(r'E:/work/python/testpython/chapter3/20200917/mikey.txt')[0:3])
-print(openfile(r'E:/work/python/testpython/chapter3/20200917/sarah.txt')[0:3])
+#print(openfile(r'E:/work/python/testpython/chapter3/20200917/james.txt')[0:3])
+#print(openfile(r'E:/work/python/testpython/chapter3/20200917/julie.txt')[0:3])
+#print(openfile(r'E:/work/python/testpython/chapter3/20200917/mikey.txt')[0:3])
+newnames = dict()
+newnames = openfile(r'E:/work/python/testpython/chapter3/20200917/sarah.txt')
+print(newnames['name']+' birthday is '+newnames['birthday']+" and fastest times are"+str(newnames['time'][0:3]))
 '''
 try:
     with open('mydata.pickle','rb') as mydatapickle:
