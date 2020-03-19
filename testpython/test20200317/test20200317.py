@@ -14,7 +14,7 @@ def print_lol(the_list,ident = False,num = 1, out = sys.stdout):
 man = []
 other = []
 try:
-    spoke = open(r'E:/work/python/testpython/chapter3/sketch.txt')
+    spoke = open(r'/testpython/chapter3/sketch.txt')
     for sopken_list in spoke:
         try:
             (role,spoken) = sopken_list.split(":",1)
@@ -28,7 +28,7 @@ try:
 except IOError:
     print('data is missng')
 try:
-    with open(r'E:/work/python/testpython/chapter3/man_data.txt','wb') as man_file,open(r'E:/work/python/testpython/chapter3/other_data.txt','wb') as other_file:
+    with open(r'/testpython/chapter3/man_data.txt', 'wb') as man_file,open(r'/testpython/chapter3/other_data.txt', 'wb') as other_file:
         pickle.dump(man,man_file)
         pickle.dump(other,other_file)
 except pickle.PickleError as err:
@@ -36,7 +36,7 @@ except pickle.PickleError as err:
 
 new_man =[]
 try:
-    with open(r'E:/work/python/testpython/chapter3/man_data.txt','rb') as man_file:
+    with open(r'/testpython/chapter3/man_data.txt', 'rb') as man_file:
         new_man = pickle.load(man_file)
 except IOError as err:
     print(str(err))

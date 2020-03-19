@@ -7,7 +7,7 @@ os.open 打开有问题，暂时不明白如何jie
 
 '''
 print(os.getcwd())
-file = open(r'E:/work/python/testpython/chapter3/sketch.txt')
+file = open(r'/testpython/chapter3/sketch.txt')
 #print(file.read(),end="")
 file.close()
 '''
@@ -15,7 +15,7 @@ file.close()
 '''
 #print(file.read(),end="")
 try:
-    file = open(r'E:/work/python/testpython/chapter3/sketch.txt')
+    file = open(r'/testpython/chapter3/sketch.txt')
 except:
     pass
 

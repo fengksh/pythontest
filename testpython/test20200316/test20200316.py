@@ -1,6 +1,6 @@
 
 try:
-    file = open(r'E:/work/python/testpython/chapter3/sketch1.txt')
+    file = open(r'/testpython/chapter3/sketch1.txt')
     for eacH_list in file:
         try:
             (roles,tttt) = eacH_list.split(':',1)
@@ -35,10 +35,10 @@ except IOError:
 print(man)
 print(other)
 '''
-out = open(r'E:/work/python/testpython/chapter3/sketch1.txt',"w")
+out = open(r'/testpython/chapter3/sketch1.txt', "w")
 print("HHHHHHHHHHHHHHHHHHHHHHHHHHsssssss",file = out)
 out.close()
-out1 = open(r'E:/work/python/testpython/chapter3/sketch1.txt')
+out1 = open(r'/testpython/chapter3/sketch1.txt')
 #print('11111111111111')
 #print(out1.readlines())
 #print('2222222222222222')
@@ -47,7 +47,7 @@ out1.close()
 man = []
 other = []
 try:
-    spoke = open(r'E:/work/python/testpython/chapter3/sketch.txt')
+    spoke = open(r'/testpython/chapter3/sketch.txt')
     for sopken_list in spoke:
         try:
             (role,spoken) = sopken_list.split(":",1)
@@ -63,7 +63,7 @@ except IOError:
 
 
 try:
-    with open('E:/work/python/testpython/chapter3/missing.txt','w') as man_file,open('E:/work/python/testpython/chapter3/other_data.txt','w') as other_file:
+    with open('/testpython/chapter3/missing.txt', 'w') as man_file,open('/testpython/chapter3/other_data.txt', 'w') as other_file:
         print(man,file = man_file)
         print(other,file=other_file)
 except IOError as err:
@@ -82,7 +82,7 @@ finally:
 '''
 
 try:
-    with open('E:/work/python/testpython/chapter3/missing.txt','w') as data:
+    with open('/testpython/chapter3/missing.txt', 'w') as data:
         print('it is a file',file = data)
 except IOError as err:
     print("File Error: "+str(err))
